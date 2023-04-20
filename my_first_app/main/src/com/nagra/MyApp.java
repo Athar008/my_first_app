@@ -14,24 +14,30 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class MyApp {
-    public static void main(String[] args) {
-        System.out.println("Hello world!, This is Athar. Nice to meet You");
-        try {
-            File image = new File("cartman.jpeg");
-            BufferedImage circleImage = ImageIO.read(image);
+    public static void main(String[] args) throws IOException {
+        System.out.println("Hello world!, This is Athar. Nice to meet You. kk");
+        BufferedImage flowerImage = null;
+        ClassLoader classLoader = MyApp.class.getClassLoader();
+        InputStream resourceAsStream = classLoader.getResourceAsStream("cartman1.jpeg");
+           // File image = new File("src/main/resources/cartman1.jpeg");
+            try {
+                BufferedImage image = ImageIO.read(resourceAsStream);
 
 
-            TextWidget widget = new PictureWidget(new TextBoxSize(80, 30),
-                    circleImage, new ShapeRasterizer());
-            Raster raster = new ExtensibleCharacterRaster();
+                TextWidget widget = new PictureWidget(new TextBoxSize(80, 30),
+                        image, new ShapeRasterizer());
+                Raster raster = new ExtensibleCharacterRaster();
 
-            widget.render(new RasterContext(raster));
-            System.out.println(raster);
-        }
-        catch(IOException e){
-            e.printStackTrace();
-        }
+                widget.render(new RasterContext(raster));
+                System.out.println(raster.toString());
+            } catch (IOException e){
+                e.printStackTrace();
+            }
+
+
+
     }
 }
