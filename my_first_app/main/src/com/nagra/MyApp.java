@@ -13,7 +13,7 @@ import java.io.InputStream;
 
 public class MyApp {
     public static void main(String[] args) throws IOException {
-        System.out.println("Hello world!, This is Athar. Nice to meet You. kk");
+        System.out.println("Hello world!, This is Athar. Nice to meet You.");
         BufferedImage flowerImage = null;
         ClassLoader classLoader = MyApp.class.getClassLoader();
         InputStream resourceAsStream = classLoader.getResourceAsStream("cartman1.jpeg");
