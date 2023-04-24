@@ -85,5 +85,13 @@ Send me your git repo link on discord through direct message by **Friday, 21th A
 1. Docker Output
 ![](doc/output1.png)
 
+2. Main App Output
+![](doc/output2.png)
+
+Q1: What is the prerequisite for another machine to run your application if you provide it the docker image ?
+Answer: The prerequisite for another machine to run your application using a Docker image is to have Docker installed. The operating system and pre-installed applications needed to run the application are already included in the Docker image. However, the Docker image that you provide may have specific requirements for the operating system and pre-installed applications needed to run the application within the container.
+
+Q2: What is the difference between a virtual machine and a docker container ?
+Answer: The main difference between a virtual machine and a Docker container is that a virtual machine emulates an entire operating system, including the kernel, on top of a hypervisor layer, while a Docker container shares the kernel of the host operating system.
 
 
